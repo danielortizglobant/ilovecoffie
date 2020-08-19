@@ -11,7 +11,10 @@ async function bootstrap() {
     //conver body
     transform: true,
     //cast body
-    whitelist: true
+    whitelist: true,
+    transformOptions: {
+      enableImplicitConversion: true,
+    },
   }))
   await app.listen(3000);
 }

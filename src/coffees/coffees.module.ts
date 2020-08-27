@@ -30,7 +30,9 @@ export class CoffeBrandFactory {
   ConfigModule.forFeature(coffeesConfig)
   ], // 👈 Adding Coffee Entity here to TypeOrmModule.forFeature
   controllers: [CoffeesController],
-  providers: [CoffeesService, CoffeBrandFactory, {
+  providers: [CoffeesService, , CoffeBrandFactory
+    /*
+    {
     provide: COFFEE_BRANDS, // 👈
     useFactory: async (connection: Connection): Promise<string[]> => {
       // const coffeeBrands = await connection.query('SELECT * ...');
@@ -48,12 +50,12 @@ export class CoffeBrandFactory {
           ? ConfigTest
           : ConfigProd
     },*/
-    {
+    /*{
       provide: COFFEE_BRANDS, // 👈
       useFactory: (brands: CoffeBrandFactory) => brands.create(),
       inject: [CoffeBrandFactory],
 
-    }
+    }*/
   ],
   /*providers: [
     { provide: CoffeesService, useClass: CoffeesService, useValue: new MockCoffeesService() },
